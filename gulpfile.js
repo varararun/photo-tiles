@@ -23,8 +23,26 @@ var banner = ["/*\n",
   ""
 ].join("");
 
-gulp.task("clean", function () {
+gulp.task("clean-dist", function () {
   return del.sync(["dist"], {
+    force: true
+  });
+});
+
+gulp.task("clean-css", function () {
+  return del.sync([
+    "assets/css/*.min.css",
+    "assets/css/*.map"
+  ], {
+    force: true
+  });
+});
+
+gulp.task("clean-js", function () {
+  return del.sync([
+    "assets/js/*.min.js",
+    "assets/js/*.map"
+  ], {
     force: true
   });
 });
@@ -32,7 +50,7 @@ gulp.task("clean", function () {
 gulp.task("default", ["serve"]);
 
 gulp.task("minify", function () {
-  runSequence("scss", "minify-css", "sourcemap-css", "typescript", "minify-js", "sourcemap-js");
+  return runSequence("clean-css", "scss", "minify-css", "sourcemap-css", "clean-js", "typescript", "minify-js", "sourcemap-js");
 });
 
 gulp.task("typescript", function () {
@@ -42,7 +60,7 @@ gulp.task("typescript", function () {
 });
 
 gulp.task("scss", function () {
-  gulp.src("assets/css/*.scss")
+  return gulp.src("assets/css/*.scss")
     .pipe(sass().on("error", sass.logError))
     .pipe(autoprefixer({
       browsers: ["last 2 versions", "> 5%", "Firefox ESR"]
@@ -51,7 +69,7 @@ gulp.task("scss", function () {
 });
 
 gulp.task("jshint", function () {
-  gulp.src([
+  return gulp.src([
       "assets/js/photo-tiles.js"
     ])
     .pipe(jshint())
@@ -60,7 +78,7 @@ gulp.task("jshint", function () {
 });
 
 gulp.task("format", function () {
-  gulp.src([
+  return gulp.src([
       "assets/css/photo-tiles.css",
       "client/js/photo-tiles.js",
       "index.html",
@@ -73,29 +91,28 @@ gulp.task("format", function () {
 });
 
 gulp.task("sourcemap-css", function () {
-  gulp.src([
+  return gulp.src([
       "assets/css/*.min.css"
     ])
     .pipe(sourcemaps.init())
-    .pipe(sourcemaps.write())
+    .pipe(sourcemaps.write("./"))
     .pipe(gulp.dest("assets/css"));
 });
 
 gulp.task("sourcemap-js", function () {
-  gulp.src([
+  return gulp.src([
       "assets/js/*.min.js",
       "!assets/js/*spec.js"
     ])
     .pipe(sourcemaps.init())
-    .pipe(sourcemaps.write())
+    .pipe(sourcemaps.write("./"))
     .pipe(gulp.dest("assets/js"));
 });
 
 gulp.task("minify-css", function () {
-  gulp.src([
+  return gulp.src([
       "assets/css/photo-tiles.css"
     ])
-    .pipe(sourcemaps.init())
     .pipe(cleanCSS({
       compatibility: "ie8"
     }))
@@ -106,15 +123,13 @@ gulp.task("minify-css", function () {
     .pipe(header(banner, {
       pkg: pkg
     }))
-    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest("assets/css"));
 });
 
 gulp.task("minify-js", function () {
-  gulp.src([
+  return gulp.src([
       "assets/js/photo-tiles.js"
     ])
-    .pipe(sourcemaps.init())
     .pipe(uglify())
     .pipe(rename({
       suffix: ".min"
@@ -122,7 +137,6 @@ gulp.task("minify-js", function () {
     .pipe(header(banner, {
       pkg: pkg
     }))
-    .pipe(sourcemaps.write())
     .pipe(gulp.dest("assets/js"));
 });
 
@@ -134,17 +148,25 @@ gulp.task("browserSync", function () {
   });
 });
 
-gulp.task("package", function () {
-  runSequence("clean", "minify");
-  gulp.src([
-      "assets/js/*.{js,map}",
+gulp.task("package-js", function () {
+  return gulp.src([
+      "assets/js/*.js",
+      "assets/js/*.map",
       "!assets/js/*.spec.js"
     ])
     .pipe(gulp.dest("dist/js"));
-  gulp.src([
-      "assets/css/*.{css,map}"
+});
+
+gulp.task("package-css", function () {
+  return gulp.src([
+      "assets/css/*.css",
+      "assets/css/*.map"
     ])
     .pipe(gulp.dest("dist/css"));
+});
+
+gulp.task("package", function () {
+  return runSequence("clean-dist", "minify", "package-css", "package-js");
 });
 
 gulp.task("serve", function () {
