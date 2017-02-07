@@ -20,10 +20,12 @@
     "url": "https://github.com/arvarghese/photo-tiles.git"
   },
   "author": "arun varghese",
-  "contributors": [{
-    "name": "avarghese4790",
-    "email": "arunv4700@gmail.com"
-  }],
+  "contributors": [
+    {
+      "name": "avarghese4790",
+      "email": "arunv4700@gmail.com"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/arvarghese/photo-tiles/issues"
@@ -38,6 +40,7 @@
     "bower": "^1.8.0",
     "browser-sync": "^2.18.2",
     "clean-css": "^3.4.21",
+    "del": "^2.2.2",
     "express": "^4.14.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
@@ -60,6 +63,7 @@
     "lite-server": "^2.2.2",
     "nodemon": "^1.11.0",
     "requirejs": "^2.3.2",
+    "run-sequence": "^1.2.2",
     "sass": "^0.5.0",
     "typescript": "^2.1.5",
     "uglify": "^0.1.5"

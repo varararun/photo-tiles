@@ -13,6 +13,8 @@ var header = require("gulp-header");
 var ts = require("gulp-typescript");
 var tsProject = ts.createProject("tsconfig.json");
 var sourcemaps = require('gulp-sourcemaps');
+var del = require("del");
+var runSequence = require("run-sequence");
 
 var banner = ["/*\n",
     " * <%= pkg.title %> (<%= pkg.homepage %>)\n",
@@ -21,9 +23,15 @@ var banner = ["/*\n",
     ""
 ].join("");
 
+gulp.task("clean", function(){
+    return del(["dist"]);
+});
+
 gulp.task("default", ["serve"]);
 
-gulp.task("minify", ["scss", "format", "minify-css", "typescript", "minify-js"]);
+gulp.task("minify", function(){
+    runSequence("scss", "format", "minify-css", "typescript", "minify-js");
+});
 
 gulp.task("typescript", function () {
     tsProject.src()
@@ -105,7 +113,8 @@ gulp.task("browserSync", function () {
     });
 });
 
-gulp.task("package", ["scss", "minify-css", "typescript", "minify-js"], function () {
+gulp.task("package", function () {
+    runSequence("clean", "scss", "minify-css", "typescript", "minify-js");
     gulp.src([
             "assets/js/*.{js,map}",
             "!assets/js/*.spec.js"
@@ -117,7 +126,9 @@ gulp.task("package", ["scss", "minify-css", "typescript", "minify-js"], function
         .pipe(gulp.dest("dist/css"));
 });
 
-gulp.task("serve", ["browserSync", "scss", "minify-css", "typescript", "minify-js"], function () {
+gulp.task("serve", function () {
+    runSequence("browserSync", "scss", "minify-css", "typescript", "minify-js");
+
     gulp.watch("assets/css/**/*.scss", ["scss"]);
     gulp.watch("assets/css/photo-tiles.css", ["minify-css"]);
     gulp.watch("assets/js/photo-tiles.ts", ["typescript"]);

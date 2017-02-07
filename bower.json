@@ -20,6 +20,7 @@
     "bower.json",
     "gulpfile.js",
     "index.html",
+    "karma.conf.json",
     "package.json",
     "server.js",
     "tsconfig.json"
