@@ -74,7 +74,7 @@ var PhotoTiles = {
             var newPhoto, newPhotoSm, offset, newPhotoSmTop, newPhotoSmBottom;
             newPhoto = document.createElement("div");
             newPhoto.className = "photo left photo-lg";
-            newPhoto.style["transform"] = "translateX(0px)";
+            newPhoto.style.transform = "translateX(0px)";
             newPhoto.style["background-image"] = "url(" + PhotoTiles.getNextPhoto() + ")";
             tile.appendChild(newPhoto);
             newPhoto = document.createElement("div");
@@ -87,14 +87,14 @@ var PhotoTiles = {
             newPhoto.appendChild(newPhotoSmBottom);
             tile.appendChild(newPhoto);
             offset = PhotoTiles.tileInfo.getLgWidth();
-            newPhoto.style["transform"] = "translateX(" + offset + "px)";
+            newPhoto.style.transform = "translateX(" + offset + "px)";
             Array.prototype.forEach.call(newPhoto.children, function (smallTile) {
                 smallTile.style["background-image"] = "url(" + PhotoTiles.getNextPhoto() + ")";
             });
             newPhoto = document.createElement("div");
             newPhoto.className = "photo right photo-lg";
             offset = PhotoTiles.tileInfo.getLgWidth() + PhotoTiles.tileInfo.getSmWidth();
-            newPhoto.style["transform"] = "translateX(" + offset + "px)";
+            newPhoto.style.transform = "translateX(" + offset + "px)";
             newPhoto.style["background-image"] = "url(" + PhotoTiles.getNextPhoto() + ")";
             tile.appendChild(newPhoto);
         });
@@ -117,14 +117,14 @@ var PhotoTiles = {
                 else {
                     offset = PhotoTiles.tileInfo.getLgWidth();
                 }
-                tile.querySelector(".middle").style["transform"] = "translateX(" + offset + "px)";
+                tile.querySelector(".middle").style.transform = "translateX(" + offset + "px)";
                 if (tile.querySelector(".right") && tile.querySelector(".right").classList.contains("photo-sm")) {
                     offset = PhotoTiles.tileInfo.getLgWidth() * 2;
                 }
                 else {
                     offset = PhotoTiles.tileInfo.getSmWidth() + PhotoTiles.tileInfo.getLgWidth();
                 }
-                tile.querySelector(".right").style["transform"] = "translateX(" + offset + "px)";
+                tile.querySelector(".right").style.transform = "translateX(" + offset + "px)";
             });
         });
         PhotoTiles.loadKeyboardEvents();
@@ -141,17 +141,17 @@ var PhotoTiles = {
         }
         var photo = photos[Math.floor(Math.random() * photos.length)];
         if (photo.classList.contains("left")) {
-            photo.style["transform"] += "translateX(-100%)";
+            photo.style.transform += "translateX(-100%)";
         }
         else if (photo.classList.contains("right")) {
-            photo.style["transform"] += "translateX(100%)";
+            photo.style.transform += "translateX(100%)";
         }
         if (photo.classList.contains("middle")) {
             if (Array.prototype.indexOf.call(photo.parentElement.parentElement.children, photo.parentElement) === 0) {
-                photo.style["transform"] += "translateY(-100%)";
+                photo.style.transform += "translateY(-100%)";
             }
             else {
-                photo.style["transform"] += "translateY(100%)";
+                photo.style.transform += "translateY(100%)";
             }
         }
         photo.classList.add("remove");
@@ -193,20 +193,20 @@ var PhotoTiles = {
             tile.appendChild(newPhoto);
             var startPosition = window.innerWidth;
             if (newPhoto.classList.contains("photo-sm")) {
-                newPhoto.style["transform"] = "translateX(" + startPosition + "px)";
+                newPhoto.style.transform = "translateX(" + startPosition + "px)";
                 Array.prototype.forEach.call(tile.querySelectorAll(".photo-sm-dual"), function (tile) {
                     imgUrl = PhotoTiles.getNextPhoto();
                     tile.style["background-image"] = "url(" + imgUrl + ")";
                 });
             }
             else {
-                newPhoto.style["transition"] = "0s";
-                newPhoto.style["transform"] = "translateX(" + startPosition + "px)";
+                newPhoto.style.transition = "0s";
+                newPhoto.style.transform = "translateX(" + startPosition + "px)";
                 newPhoto.style["background-image"] = "url(" + imgUrl + ")";
             }
             setTimeout(function () {
-                newPhoto.style["transition"] = ".5s ease-in-out";
-                newPhoto.style["transform"] = "translateX(" + offset + "px)";
+                newPhoto.style.transition = ".5s ease-in-out";
+                newPhoto.style.transform = "translateX(" + offset + "px)";
                 newPhoto.classList.add("loaded");
             }, 200);
         });
@@ -220,20 +220,20 @@ var PhotoTiles = {
             if (!tile.querySelector(".left")) {
                 if (tile.querySelector(".middle")) {
                     photo = tile.querySelector(".middle");
-                    photo.style["transform"] = "translateX(0px)";
+                    photo.style.transform = "translateX(0px)";
                     photo.classList.remove("middle");
                     photo.classList.add("left");
                     if (tile.querySelector(".right")) {
                         offset = tile.querySelector(".left").offsetWidth;
                         photo = tile.querySelector(".right");
-                        photo.style["transform"] = "translateX(" + offset + "px)";
+                        photo.style.transform = "translateX(" + offset + "px)";
                         photo.classList.remove("right");
                         photo.classList.add("middle");
                     }
                 }
                 else {
                     if (tile.querySelector(".right")) {
-                        tile.querySelector(".right").style["transform"] = "translateX(0px)";
+                        tile.querySelector(".right").style.transform = "translateX(0px)";
                     }
                 }
             }
@@ -241,7 +241,7 @@ var PhotoTiles = {
                 if (tile.querySelector(".right")) {
                     offset = tile.querySelector(".left").offsetWidth;
                     photo = tile.querySelector(".right");
-                    photo.style["transform"] = "translateX(" + offset + "px)";
+                    photo.style.transform = "translateX(" + offset + "px)";
                     photo.classList.remove("right");
                     photo.classList.add("middle");
                 }
