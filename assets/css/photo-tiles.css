@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald");
+html,
+body {
+  margin: 0 !important;
+  padding: 0 !important; }
+
+.photo-tiles-container {
+  height: 100% !important;
+  width: 100% !important;
+  position: fixed;
+  overflow: hidden;
+  background: black;
+  color: white;
+  font-family: "Oswald";
+  overflow: hidden; }
+  .photo-tiles-container .photo-tiles {
+    -webkit-transition: .5s ease-in-out !important;
+    transition: .5s ease-in-out !important;
+    box-sizing: border-box !important;
+    height: 100% !important;
+    width: 100% !important;
+    border: 3px solid black; }
+    .photo-tiles-container .photo-tiles .photo-tiles-row {
+      -webkit-transition: .5s ease-in-out !important;
+      transition: .5s ease-in-out !important;
+      box-sizing: border-box !important;
+      height: 50%;
+      width: 100%;
+      position: relative; }
+      .photo-tiles-container .photo-tiles .photo-tiles-row .photo {
+        -webkit-transition: .5s ease-in-out !important;
+        transition: .5s ease-in-out !important;
+        box-sizing: border-box !important;
+        background-position: center bottom !important;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+        background-color: grey;
+        position: absolute;
+        height: 100%;
+        border: 3px solid black;
+        float: left;
+        opacity: 0; }
+        .photo-tiles-container .photo-tiles .photo-tiles-row .photo.loaded {
+          opacity: 1; }
+        .photo-tiles-container .photo-tiles .photo-tiles-row .photo.photo-lg {
+          width: 40%; }
+        .photo-tiles-container .photo-tiles .photo-tiles-row .photo.photo-sm {
+          width: 20%; }
+          .photo-tiles-container .photo-tiles .photo-tiles-row .photo.photo-sm .photo-sm-dual {
+            height: 50%;
+            width: 100%;
+            background-position: center bottom !important;
+            background-size: cover !important;
+            background-repeat: no-repeat !important;
+            position: absolute;
+            bottom: 0; }
+          .photo-tiles-container .photo-tiles .photo-tiles-row .photo.photo-sm .photo-sm-dual:first-child {
+            border-bottom: 6px solid black;
+            top: 0;
+            z-index: 1; }
+        .photo-tiles-container .photo-tiles .photo-tiles-row .photo.remove {
+          opacity: 0 !important; }

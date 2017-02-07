@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Photo Tiles Demo</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/photo-tiles.min.css">
+    <link href="assets/images/favicon.ico" rel="icon" type="image/png">
+    <style>
+        .demo-title {
+            position: absolute;
+            top: 0;
+            color: white;
+            opacity: .75;
+            text-shadow: 0.1em 0.1em 0.5em black;
+            z-index: 10;
+            font-family: sans-serif;
+            transition: .3s ease-in-out;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .demo-title:hover {
+            opacity: 1
+        }
+        
+        .controls {
+            position: fixed;
+            border-radius: 0.5em;
+            bottom: 0;
+            right: 0;
+            margin: 0;
+            z-index: 1;
+            padding: 1em;            
+        }
+        
+        .controls>button {
+            font-family: sans-serif;
+            background-color: black;
+            outline: none;
+            border: 1px solid white;
+            color: white;
+            opacity: .7;
+            cursor: pointer;
+            font-size: 1em;
+            transition: .3s ease-in-out;
+        }
+        
+        .controls>button:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <h1 class="demo-title" onclick="window.location='https://github.com/arvarghese/photo-tiles';">Photo Tiles Demo</h1>
+    <div class="controls">
+        <button onclick="PhotoTiles.toggleExecution();">Toggle Execution</button>
+        <button onclick="PhotoTiles.initialize({demoMode:true})">Initialize</button>
+        <button onclick="PhotoTiles.reset();">Reset</button>
+    </div>
+    <div class="photo-tiles-container"></div>
+    <script type="text/javascript" src="assets/js/photo-tiles.min.js"></script>
+    <script>
+        PhotoTiles.initialize({
+            demoMode: true
+        });
+    </script>
+</body>
+
+</html>

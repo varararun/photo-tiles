@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+$border-color: black;
+$background: black;
+$text-color-primary: white;
+$font-family: "Oswald";
+$border-size: 3px;
+html,
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+@mixin cover {
+    height: 100% !important;
+    width: 100% !important;
+}
+
+@mixin base-attributes {
+    transition: .5s ease-in-out !important;
+    box-sizing: border-box !important;
+}
+
+@mixin background-img {
+    background-position: center bottom !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+}
+
+.photo-tiles-container {
+    @include cover;
+    position: fixed;
+    overflow: hidden;
+    background: $background;
+    color: $text-color-primary;
+    font-family: $font-family;
+    overflow: hidden;
+    .photo-tiles {
+        @include base-attributes;
+        @include cover;
+        border: $border-size solid $border-color;
+        .photo-tiles-row {
+            @include base-attributes;
+            height: 50%;
+            width: 100%;
+            position: relative;
+            .photo {
+                @include base-attributes;
+                @include background-img;
+                background-color: grey;
+                position: absolute;
+                height: 100%;
+                border: $border-size solid $border-color;
+                float: left;
+                opacity: 0;
+                &.loaded {
+                    opacity: 1;
+                }
+                &.photo-lg {
+                    width: 40%;
+                }
+                &.photo-sm {
+                    width: 20%;
+                    .photo-sm-dual {
+                        height: 50%;
+                        width: 100%;
+                        @include background-img;
+                        position: absolute;
+                        bottom: 0;
+                    }
+                    .photo-sm-dual:first-child {
+                        border-bottom: $border-size*2 solid $border-color;
+                        top: 0;
+                        z-index: 1;
+                    }
+                }
+                &.remove {
+                    opacity: 0 !important;
+                }
+            }
+        }
+    }
+}

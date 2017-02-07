@@ -1,0 +1,61 @@
+###################################
+#### WRITTEN BY AVARGHESE4790 #####
+###################################
+
+### OS FILES ###
+## OSX Files
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+
+### IDEs ###
+## Eclipse
+.project
+.settings/
+.*.md.html
+## IntelliJ
+*.iml
+*.ipr
+*.iws
+.idea/
+## Netbeans
+nbproject/private/
+build/
+nbbuild/
+nbdist/
+nbactions.xml
+nb-configuration.xml
+# Sublime
+*.sublime-project
+*.sublime-workspace
+## Visual Studio  
+.vscode/  
+
+### NODE ###
+## Node Files
+**/npm-debug.*
+**/node_modules/
+
+### FRONT END ### 
+## SASS Files
+.sass-cache/
+**/**/global-configs.styles.scss
+## Bower Files
+.bower-*/
+bower_components
+assets/lib
+
+### ANGULAR ###
+## Angular CLI
+server/dist/
+client/dists/
+
+### OTHER ###
+## Files
+files/
+## vim Files
+*.swp
