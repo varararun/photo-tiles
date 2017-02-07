@@ -1,35 +1,35 @@
 {
-  "name": "photo-tiles",
-  "description": "Photo Tiles, JS implementation of Mac's Photo Tiles Screensaver",
-  "main": [
-    "dist/photo-tiles.js",
-    "dist/photo-tiles.css"
-  ],
-  "authors": [
-    "avarghese4790"
-  ],
-  "license": "MIT",
-  "homepage": "https://github.com/arvarghese/photo-tiles",
-  "ignore": [
-    "assets/",
-    "node_modules",
-    ".bowerrc",
-    ".gitignore",
-    ".npmignore",
-    ".travis.yml",
-    "bower.json",
-    "gulpfile.js",
-    "index.html",
-    "karma.conf.json",
-    "package.json",
-    "server.js",
-    "tsconfig.json"
-  ],
-  "keywords": [
-    "photos",
-    "tiles",
-    "photo-tiles",
-    "library"
-  ],
-  "dependencies": {}
+    "name": "photo-tiles",
+    "description": "Photo Tiles, JS implementation of Mac's Photo Tiles Screensaver",
+    "main": [
+        "dist/photo-tiles.js",
+        "dist/photo-tiles.css"
+    ],
+    "authors": [
+        "avarghese4790"
+    ],
+    "license": "MIT",
+    "homepage": "https://github.com/arvarghese/photo-tiles",
+    "ignore": [
+        "assets/",
+        "node_modules",
+        ".bowerrc",
+        ".gitignore",
+        ".npmignore",
+        ".travis.yml",
+        "bower.json",
+        "gulpfile.js",
+        "index.html",
+        "karma.conf.json",
+        "package.json",
+        "server.js",
+        "tsconfig.json"
+    ],
+    "keywords": [
+        "photos",
+        "tiles",
+        "photo-tiles",
+        "library"
+    ],
+    "dependencies": {}
 }

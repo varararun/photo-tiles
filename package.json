@@ -41,6 +41,7 @@
     "browser-sync": "^2.18.2",
     "clean-css": "^3.4.21",
     "del": "^2.2.2",
+    "eslint": "^3.15.0",
     "express": "^4.14.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
@@ -65,6 +66,7 @@
     "requirejs": "^2.3.2",
     "run-sequence": "^1.2.2",
     "sass": "^0.5.0",
+    "scss-lint": "0.0.0",
     "typescript": "^2.1.5",
     "uglify": "^0.1.5"
   }
