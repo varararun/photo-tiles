@@ -12,12 +12,12 @@
     "prestart": "npm install",
     "start": "gulp serve",
     "package": "gulp package",
-    "register": "bower register photo-tiles https://github.com/arvarghese/photo-tiles",
+    "register": "bower register photo-tiles https://github.com/varararun/photo-tiles",
     "test": "karma start karma.conf.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/arvarghese/photo-tiles.git"
+    "url": "https://github.com/varararun/photo-tiles.git"
   },
   "author": "arun varghese",
   "contributors": [
@@ -28,9 +28,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/arvarghese/photo-tiles/issues"
+    "url": "https://github.com/varararun/photo-tiles/issues"
   },
-  "homepage": "https://github.com/arvarghese/photo-tiles",
+  "homepage": "https://github.com/varararun/photo-tiles",
   "keywords": [
     "photo-tiles",
     "tiles"

@@ -1,13 +1,13 @@
-[![GitHub version](https://badge.fury.io/gh/arvarghese%2Fphoto-tiles.svg)](https://badge.fury.io/gh/arvarghese%2Fphoto-tiles)
-[![Build Status](https://travis-ci.org/arvarghese/photo-tiles.svg?branch=master)](https://travis-ci.org/arvarghese/photo-tiles) 
+[![GitHub version](https://badge.fury.io/gh/varararun%2Fphoto-tiles.svg)](https://badge.fury.io/gh/varararun%2Fphoto-tiles)
+[![Build Status](https://travis-ci.org/varararun/photo-tiles.svg?branch=master)](https://travis-ci.org/varararun/photo-tiles) 
 
 # PhotoTiles
 
 #### Photo Tiles, JS implementation of Mac's Photo Tiles Screensaver
 
-### [Changelog](https://github.com/arvarghese/photo-tiles/wiki/Changelog)
-### [Contribution Guidelines](https://github.com/arvarghese/photo-tiles/wiki/Contributing)  
-### [Submitting Issues](https://github.com/arvarghese/photo-tiles/wiki/Issue-Template)  
+### [Changelog](https://github.com/varararun/photo-tiles/wiki/Changelog)
+### [Contribution Guidelines](https://github.com/varararun/photo-tiles/wiki/Contributing)  
+### [Submitting Issues](https://github.com/varararun/photo-tiles/wiki/Issue-Template)  
 
 ### Run Demo on Your Machine
 ```bash

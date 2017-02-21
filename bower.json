@@ -6,10 +6,10 @@
         "dist/photo-tiles.css"
     ],
     "authors": [
-        "avarghese4790"
+        "Arun Varghese <arunv4700@gmail.com>"
     ],
     "license": "MIT",
-    "homepage": "https://github.com/arvarghese/photo-tiles",
+    "homepage": "https://github.com/varararun/photo-tiles",
     "ignore": [
         "assets/",
         "node_modules",        
