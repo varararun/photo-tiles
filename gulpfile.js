@@ -17,10 +17,10 @@ var browserSync = require('browser-sync').create();
 var autoprefixer = require('gulp-autoprefixer');
 
 var paths = {
-  scss: 'assets/css/travel.scss',
-  css: 'assets/css/travel.css',  
-  ts:'assets/js/travel.ts',
-  js:'assets/js/travel.js'
+  scss: 'assets/css/photo-tiles.scss',
+  css: 'assets/css/photo-tiles.css',  
+  ts:'assets/js/photo-tiles.ts',
+  js:'assets/js/photo-tiles.js'
 }
 
 var banner = ['/*\n',
@@ -167,7 +167,7 @@ gulp.task('package-css', function () {
 });
 
 gulp.task('package', function () {
-  return runSequence('clean-dist', 'minify', 'package-css', 'package-js');
+  return runSequence('clean-dist', 'package-css', 'package-js');
 });
 
 
